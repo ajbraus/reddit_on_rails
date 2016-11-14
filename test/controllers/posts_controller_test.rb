@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
+
+  def setup do 
+    @post = posts(:one)
+  end
+
   test "should get index" do
     get root_url
     assert_response :success
@@ -13,9 +18,14 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create new post" do 
     post posts_url,
-      params: { "post": { "title": "Awesome post", "body": "Hey you guys" } }
+      params: { "post": { "title": @post.title, "body": @post.body, "url": @post.url } }
     assert_response :redirect
     follow_redirect!
+    assert_response :success
+  end
+
+  test "should be able to view individual post" do
+    get post_url(@post.id)
     assert_response :success
   end
 

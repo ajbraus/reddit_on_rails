@@ -1,11 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  body: MyText
-  url: MyString
+  title: Awesome post sauce
+  body: super great post dude man
+  url: https://www.google.com
 
 two:
   title: MyString
   body: MyText
   url: MyString
+
+invalid:
+  title: 
+  body:
+  url:
