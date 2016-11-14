@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
 
-  def setup do 
+  def setup 
     @post = posts(:one)
   end
 
