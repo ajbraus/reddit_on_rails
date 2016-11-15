@@ -1,6 +1,14 @@
 require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
+<<<<<<< HEAD
+=======
+
+  def setup 
+    @post = posts(:one)
+  end
+
+>>>>>>> comments_practice
   test "should get index" do
     get root_url
     assert_response :success

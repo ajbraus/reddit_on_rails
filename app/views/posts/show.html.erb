@@ -1,0 +1,19 @@
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<%= @post.title %>
+<h4>Comments</h4>
+
+<%= form_for [@post, @comment] do |f| %>
+  <%= f.text_area :body %>
+  <div class="text-right">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<% @post.comments.each do |c| %>
+  <p>
+    <%= c.body %>
+  </p>
+<% end %>

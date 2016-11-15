@@ -15,6 +15,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @comment = @post.comments.new
+  end
+
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
