@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authorize, except: [:index, :show]
+
   def index
     @posts = Post.all
   end
@@ -11,6 +13,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
+      flash[:notice] = "Post successfully created"
       redirect_to root_path
     end
   end

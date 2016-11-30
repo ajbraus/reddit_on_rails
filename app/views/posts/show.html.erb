@@ -5,11 +5,13 @@
 <%= @post.title %>
 <h4>Comments</h4>
 
-<%= form_for [@post, @comment] do |f| %>
-  <%= f.text_area :body %>
-  <div class="text-right">
-    <%= f.submit %>
-  </div>
+<% if current_user %>
+  <%= form_for [@post, @comment] do |f| %>
+    <%= f.text_area :body %>
+    <div class="text-right">
+      <%= f.submit %>
+    </div>
+  <% end %>
 <% end %>
 
 <% @post.comments.each do |c| %>
