@@ -1,7 +1,23 @@
-<legend>New Post</legend>
-<%= form_for(@post) do |f| %>
-  <p><%= f.text_field :title %></p>
-  <p><%= f.text_field :url %></p>
-  <p><%= f.text_area :body %></p> 
-  <%= f.submit %>
-<% end %>
+
+<div class="row">
+  <div class="col-sm-4 offset-sm-4">
+    <legend>New Post</legend>
+    <%= form_for(@post) do |f| %>
+      <p>
+        <%= f.label :title %>
+        <%= f.text_field :title, class:"form-control", placeholder:"Title" %>
+      </p>
+      <p>
+        <%= f.label :url %>
+        <%= f.url_field :url, class:"form-control", placeholder:"Url" %>
+      </p>
+      <p>
+        <%= f.label :body %>
+        <%= f.text_area :body, class:"form-control", placeholder:"Body" %>
+      </p> 
+      <div class="text-xs-right">
+        <%= f.submit "Save", class:'btn btn-primary' %>  
+      </div>
+    <% end %>
+  </div>
+</div>

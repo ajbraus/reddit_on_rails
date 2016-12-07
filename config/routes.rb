@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
 
+  resources :votes, only: [:create]
+
   resources :users, only: [:new, :create]
   resources :sessions, only: [:create]
 

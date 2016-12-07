@@ -1,4 +1,19 @@
-<% @posts.each do |p| %>
-  <p><%= link_to p.title, p %></p>
-  <p><%= p.body %></p>
-<% end %>
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+    <% @posts.each do |p| %>
+
+      <p><%= link_to p.title, p %></p>
+      <p><%= p.body %></p>
+
+      <% if current_user.voted_posts.include?(p) %>
+        Voted up!
+      <% else %>
+        <%= form_for(current_user.votes.build) do |f| %>
+          <div><%= hidden_field_tag :voted_post_id, p.id %></div>
+          <%= f.submit "Vote Up", class: "btn btn-primary btn-sm" %>
+        <% end %>
+      <% end %>
+      <hr>
+    <% end %>
+  </div>
+</div>
