@@ -1,0 +1,12 @@
+<p><%= link_to post.title, post %></p>
+<p><%= post.body %></p>
+
+<% if current_user.voted_posts.include?(post) %>
+  Voted up!
+<% else %>
+  <%= form_for(current_user.votes.build) do |f| %>
+    <div><%= hidden_field_tag :voted_post_id, post.id %></div>
+    <%= f.submit "Vote Up", class: "btn btn-primary btn-sm" %>
+  <% end %>
+<% end %>
+<hr>

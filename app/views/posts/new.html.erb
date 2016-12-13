@@ -5,7 +5,11 @@
     <%= form_for(@post) do |f| %>
       <p>
         <%= f.label :title %>
-        <%= f.text_field :title, class:"form-control", placeholder:"Title" %>
+        <% if params[:action] == "new" %>
+          <%= f.text_field :title, class:"form-control", placeholder:"Title" %>
+        <% else %>
+          <%= @post.title %>
+        <% end %>
       </p>
       <p>
         <%= f.label :url %>
