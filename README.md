@@ -1,11 +1,6 @@
 # Reddit on Rails
 
-## Motivation
-
-## Usage
-
-
-## Getting Started
+## Setup Instructions
 
 * Ruby version
 
@@ -22,5 +17,13 @@
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+
+
+## Motivation
+
+## Usage
+
+
+## Getting Started
 
 ## How to Contribute
