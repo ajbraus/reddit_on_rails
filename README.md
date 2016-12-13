@@ -1,9 +1,11 @@
-# README
+# Reddit on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Motivation
 
-Things you may want to cover:
+## Usage
+
+
+## Getting Started
 
 * Ruby version
 
@@ -21,5 +23,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
-# reddit_on_rails
+## How to Contribute
